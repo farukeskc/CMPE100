@@ -1,0 +1,46 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Question_3_4) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "batch-io.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "batch-io.rkt" "teachpack" "2htdp")) #f)))
+;>>>>>>>>>>>>>QUESTION 3<<<<<<<<<<<<<<<<
+(define chimney (overlay/align "middle" "top" (rectangle 40 8 "solid" "brown") (rectangle 30 60 "solid" "light brown")))
+
+(define roof (isosceles-triangle 200 100 "solid" "brown"))
+
+
+
+
+
+
+(define window (overlay (rectangle 80 3 "solid" "black") (rectangle 3 80 "solid" "black") (rectangle 80 80 "solid" "purple")))
+
+(define door (place-image (circle 3 "solid" "black") 15 60 (rectangle 80 120 "solid" "purple")))
+
+(define wall (rectangle 305 250 "solid" "light brown"))
+
+
+
+(define homeTop (place-image chimney 225 60 roof))
+
+(define homeBottom (place-image window 245 70 (place-image window 60 70 (place-image door 152 190 wall))))
+
+
+
+(above homeTop homeBottom)
+
+
+
+
+
+
+
+
+;>>>>>>>>>>>>>QUESTION 4<<<<<<<<<<<<<<<<
+
+(define redCircle (circle 40 "solid" "red"))
+(define greenCircle (circle 200 "solid" "green"))
+
+(define myTransparentScene (rectangle 160 160 0 "red"))
+
+(define fourRedCircles (above (beside redCircle redCircle) (beside redCircle redCircle)))
+
+(overlay fourRedCircles greenCircle)

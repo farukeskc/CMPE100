@@ -1,0 +1,23 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname solutions) (read-case-sensitive #t) (teachpacks ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "batch-io.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "image.rkt" "teachpack" "2htdp") (lib "universe.rkt" "teachpack" "2htdp") (lib "batch-io.rkt" "teachpack" "2htdp")) #f)))
+;Data defination: number, boolean
+;Purpose: to find the given number is prime or not
+;Contract: isPrime number --> boolean
+;Example:
+;(check-expect (isPrime 3) #true)
+;(check-expect (isPrime 2) #true)
+;(check-expect (isPrime 1) #false)
+;(check-expect (isPrime 4) #false)
+;(check-expect (isPrime 0) #false)
+;Template:
+;Function:
+(define (isPrime x)
+         (not (d x (- x 1))))
+(define (d p k)
+  (cond
+    ((<= k 1) #false)
+    ((and (<= 2 k) (modulo p k)) #true)
+    (else (d p (- k 1)))))
+
+(isPrime 4)
